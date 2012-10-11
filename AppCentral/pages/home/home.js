@@ -5,7 +5,15 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
+
+            var eventsListView = element.querySelector('#eventsListView').winControl;
+            eventsListView.oniteminvoked = this._itemInvoked.bind(this);
+        },
+
+        _itemInvoked: function (args) {
+            var selectedItem = Data.allEvents.getAt(args.detail.itemIndex);
+            WinJS.Navigation.navigate('/pages/detail/detail.html', { item: selectedItem });
         }
+
     });
 })();
