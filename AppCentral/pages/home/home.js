@@ -8,6 +8,12 @@
 
             var eventsListView = element.querySelector('#eventsListView').winControl;
             eventsListView.oniteminvoked = this._itemInvoked.bind(this);
+
+            var visitSiteButton = element.querySelector('#visitSiteButton');
+            visitSiteButton.addEventListener('click', function () {
+                var siteUri = new Windows.Foundation.Uri('http://appcentral.cloudapp.net');
+                Windows.System.Launcher.launchUriAsync(siteUri);
+            });
         },
 
         _itemInvoked: function (args) {
