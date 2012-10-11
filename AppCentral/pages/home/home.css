@@ -2,6 +2,52 @@
     margin-left: 120px;
 }
 
+#eventsListView.win-listview {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    margin-top: 10px;
+}
+
+    #eventsListView.win-listview .win-container {
+        background-color: #706b6e;
+        border-color: #413b40;
+    }
+
+        #eventsListView.win-listview .win-container:hover {
+            background-color: #61bae0;
+            border-color: #61bae0;
+        }
+
+.eventItem {
+    width: 500px;
+    height: 121px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-grid;
+}
+
+    .eventItem img {
+        width: 140px;
+        height: 111px;
+        margin: 5px;
+        -ms-grid-column: 1;
+    }
+
+    .eventItem div {
+        margin: 5px;
+        -ms-grid-column: 2;
+    }
+
+    .eventItem h4 {
+        font-size: 15px;
+    }
+
+    .eventItem h6 {
+        font-size: 13px;
+    }
+
 @media screen and (-ms-view-state: snapped) {
     .homepage section[role=main] {
         margin-left: 20px;

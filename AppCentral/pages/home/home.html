@@ -27,9 +27,11 @@
 
         <div id="eventItemTemplate" data-win-control="WinJS.Binding.Template">
             <div class="eventItem">
+                <img src="#" alt="" data-win-bind="src: image; alt: title" />
                 <div>
                     <h4 data-win-bind="innerText: title"></h4>
                     <h4 data-win-bind="innerText: speakers"></h4>
+                    <h6 data-win-bind="innerText: date"></h6>
                 </div>
             </div>
         </div>

@@ -4,8 +4,15 @@
 
     var eventsList = new WinJS.Binding.List();
 
-    eventsList.push({ title: 'Win8 w/ HTML+JS', speakers: 'Caio' });
-    eventsList.push({ title: 'Windows 8 UX Design - Part 1', speakers: 'Leslie' });
+    var apiUrl = 'http://appcentral-api.azurewebsites.net/v1/events';
+
+    WinJS.xhr({ url: apiUrl }).then(function (xhr) {
+        var items = JSON.parse(xhr.responseText);
+
+        items.forEach(function (item) {
+            eventsList.push(item);
+        });
+    });
 
     WinJS.Namespace.define("Data", {
         allEvents : eventsList
